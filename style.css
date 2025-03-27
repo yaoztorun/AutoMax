@@ -1,0 +1,415 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  height: 100%;
+  background: linear-gradient(135deg, #ffffff 0%, #f7f9fc 100%);
+  background-size: 30px 30px;
+  background-position: center top;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Navbar styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 4rem;  /* ⬅️ Reduce top-bottom padding */
+  background-color: white;
+  box-shadow: 0 3px 7px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+
+.logo img {
+  height: 65px;       /* Adjust size here */
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+  padding: 0.5rem 0.8rem;
+  border-radius: 5px;
+}
+
+.nav-links a:hover {
+  background-color: #f0f0f0;
+  color: #ff6600;
+}
+
+.nav-links .btn {
+  background-color: #ff6600;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-links .btn:hover {
+  background-color: #e05600;
+}
+
+/* Main Section */
+.main-section {
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(1px);
+}
+
+.main-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.main-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.buy-sell-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.buy-sell-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.buy-section,
+.sell-section,
+.info-section {
+  max-width: 400px;
+  text-align: center;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.buy-section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #0044cc, #00bfff, #0044cc);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sell-section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #ff6600, #ffa94d, #ff6600);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.info-section.about::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #999999, #bbbbbb, #999999);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.info-section.buying::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #0044cc, #00bfff, #0044cc);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.info-section.selling::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #ff6600, #ffa94d, #ff6600);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.buy-section:hover::before,
+.sell-section:hover::before,
+.info-section.about:hover::before,
+.info-section.buying:hover::before,
+.info-section.selling:hover::before {
+  opacity: 1;
+}
+
+.buy-section:hover,
+.sell-section:hover,
+.info-section.about:hover,
+.info-section.buying:hover,
+.info-section.selling:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.buy-text {
+  color: #0044cc;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.sell-text {
+  color: #ff6600;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.buy-section p,
+.sell-section p {
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.buy-btn,
+.sell-btn {
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+.buy-btn {
+  background-color: #0044cc;
+}
+
+.buy-btn:hover {
+  background-color: #003399;
+}
+
+.sell-btn {
+  background-color: #ff6600;
+}
+
+.sell-btn:hover {
+  background-color: #e05500;
+}
+
+.car-pair {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 4rem;
+}
+
+.car-img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+}
+
+.car-img.left {
+  transform: scaleX(1);
+}
+
+.car-img.right {
+  transform: scaleX(1);
+}
+
+/* Info Sections */
+.info-section {
+  padding: 3rem 2rem;
+  background-color: white;
+  margin: 2rem auto;
+  max-width: 1000px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.split-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.info-text {
+  flex: 1 1 500px;
+}
+
+.info-text h2 {
+  font-size: 2rem;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.info-text p {
+  font-size: 1.05rem;
+  color: #444;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.info-image {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.info-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* optıonal */
+.navbar.shrink {
+  padding: 0.5rem 2rem;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.car-background-container {
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  margin-bottom: -100px; /* overlap the buy/sell section slightly */
+}
+
+.car-backgrounds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.car-img-bg {
+  position: absolute;
+  bottom: 0;
+  opacity: 0.08;
+  height: auto;
+  max-height: 313px;
+  width: auto;
+}
+
+.car-img-bg.left {
+  left: 0;
+  transform: scaleX(1);
+}
+
+.car-img-bg.right {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.footer {
+  background-color: #f5f5f5;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+  border-top: 1px solid #ddd;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+}
+
+.footer-column h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.footer-column a {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #555;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+  color: #ff6600;
+}
+
+.footer-column p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.footer-logo {
+  width: 100px;
+  margin-bottom: 1rem;
+}
