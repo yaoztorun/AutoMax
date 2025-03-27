@@ -20,28 +20,37 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.75rem 4rem;  /* ⬅️ Reduce top-bottom padding */
-  background-color: white;
+  padding: 10px 20px;
+  background-color: white; /* Set background color to white */
   box-shadow: 0 3px 7px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: all 0.3s ease; /* Smooth transition for shrinking */
 }
 
-
 .logo img {
-  height: 65px;       /* Adjust size here */
+  height: 50px; /* Adjust logo size */
   width: auto;
   display: block;
   object-fit: contain;
 }
 
+.nav-container {
+  display: flex;
+}
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  gap: 0.6rem; /* Reduced gap to 0.6rem */
   align-items: center;
+}
+
+.nav-links li {
+  margin: 0 10px;
 }
 
 .nav-links a {
@@ -51,6 +60,17 @@ body {
   transition: color 0.3s;
   padding: 0.5rem 0.8rem;
   border-radius: 5px;
+}
+
+.nav-btn, .btn {
+  text-decoration: none;
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.nav-btn:hover, .btn:hover {
+  background-color: #ddd; /* Example hover effect */
 }
 
 .nav-links a:hover {
@@ -259,7 +279,7 @@ body {
 
 .car-img {
   width: 100%;
-  max-width: 450px;
+  max-width: 100px;
   height: auto;
 }
 
@@ -326,6 +346,8 @@ body {
   padding: 0.5rem 2rem;
   box-shadow: 0 1px 5px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
+  height: 50px; /* Adjust height for the shrink effect */
+  background-color: white; /* Set background color to white */
 }
 
 .car-background-container {
